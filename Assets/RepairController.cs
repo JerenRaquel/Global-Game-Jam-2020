@@ -25,6 +25,7 @@ public class RepairController : MonoBehaviour
     }
     #endregion
 
+    #region Calls Repair through events
     void OnEnable()
     {
         PlayerController.Interacting += Repair;
@@ -34,7 +35,9 @@ public class RepairController : MonoBehaviour
     {
         PlayerController.Interacting -= Repair;
     }
+    #endregion
 
+    //checks to see if the fillcontroller is done (ie 1) and stops the player from interacting with it
     void Repair()
     {
         if(fillController.isDone)
@@ -42,6 +45,7 @@ public class RepairController : MonoBehaviour
             PlayerController.interacting = false;
             return;
         }
+        //increase the fill gauge as long as the player is repairing it
         if(repairActive && !fillController.isDone)
             fillController.IncreaseFill(rate);
     }
