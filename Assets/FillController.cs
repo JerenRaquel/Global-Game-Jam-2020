@@ -20,6 +20,7 @@ public class FillController : MonoBehaviour
         if(fillBar.fillAmount >= 1)
         {
             isDone = true;
+            GameController.instance.CreatedNewFloor();  
             return;
         }
         fillBar.fillAmount += (amount / 100);

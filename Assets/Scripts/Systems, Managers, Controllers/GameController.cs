@@ -4,6 +4,19 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    #region Instance
+    public static GameController instance = null;
+
+    void Awake()
+    {
+        if(instance == null)
+            instance = this;
+        else
+            Destroy(this);
+    }
+    #endregion
+
+
     #region Calls CreatedNewFloor through events
     void OnEnable()
     {
@@ -17,7 +30,7 @@ public class GameController : MonoBehaviour
     #endregion
 
     //Creates a new random floor from the array
-    void CreatedNewFloor()
+    public void CreatedNewFloor()
     {
         FloorGenerator.instance.Generate(Random.Range(0, FloorGenerator.instance.toBeConvertedLevel.Length));
     }

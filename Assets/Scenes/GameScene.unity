@@ -305,7 +305,7 @@ MonoBehaviour:
   speed: 8
   dashSpeed: 2
   repairDelay: 1
-  useKeyBoard: 1
+  useKeyBoard: 0
 --- !u!4 &1967744657
 Transform:
   m_ObjectHideFlags: 0
@@ -390,7 +390,7 @@ PrefabInstance:
     - target: {fileID: 24894242484981665, guid: 8f0ea8912c6033e4a9abcd62ff492356,
         type: 3}
       propertyPath: toBeConvertedLevel.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 24894242484981665, guid: 8f0ea8912c6033e4a9abcd62ff492356,
         type: 3}
@@ -445,5 +445,11 @@ PrefabInstance:
       propertyPath: colorMappings.Array.data[1].pixelColor.b
       value: 0.7294118
       objectReference: {fileID: 0}
+    - target: {fileID: 24894242484981665, guid: 8f0ea8912c6033e4a9abcd62ff492356,
+        type: 3}
+      propertyPath: toBeConvertedLevel.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 060ae0c53d2cbe641b3fd8f7ffdbc148,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f0ea8912c6033e4a9abcd62ff492356, type: 3}
