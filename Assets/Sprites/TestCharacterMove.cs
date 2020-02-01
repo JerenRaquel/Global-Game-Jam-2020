@@ -5,12 +5,12 @@ using UnityEngine;
 public class TestCharacterMove : MonoBehaviour
 {
     Rigidbody2D rigidbody2d;
-    public InputMaster input;
+    //public InputMaster input;
     // Start is called before the first frame update
     void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
-        input = new InputMaster();
+        //input = new InputMaster();
     }
 
     // Update is called once per frame
