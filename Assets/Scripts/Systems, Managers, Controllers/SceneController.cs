@@ -5,6 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
+    #region instance
+    public static SceneController instance = null;
+    void Awake()
+    {
+        if(instance == null)
+            instance = this;
+        else
+            Destroy(this);
+    }
+    #endregion
+
     // Start is called before the first frame update
     void Start()
     {
