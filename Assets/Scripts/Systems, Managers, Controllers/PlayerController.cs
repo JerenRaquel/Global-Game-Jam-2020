@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
         input.Player1.Interact.started += ctx => StartCoroutine(Interact());
     }
     
+    //starts a loop to keep calling the interacting event until interating is false
     IEnumerator Interact()
     {
         interacting = true;
@@ -39,11 +40,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //moves the player
     void Move1(Vector2 dir)
     {
         player1.GetComponent<Rigidbody2D>().position += dir * speed * Time.deltaTime * dashSpeedCTX;
     }
 
+    //needed for unity input system
     private void OnEnable()
     {
         input.Enable();
