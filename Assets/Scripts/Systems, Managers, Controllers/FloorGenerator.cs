@@ -35,6 +35,11 @@ public class FloorGenerator : MonoBehaviour
     //Loops through each pixel and generates the coorisponding tile
     public void Generate(int levelIndex)
     {
+        foreach (Transform child in OutputTransform)
+        {
+            Destroy(child.gameObject);
+        }
+        
         Texture2D level = toBeConvertedLevel[levelIndex].levelArt;
         for(int x = 0; x < level.width; x++)
         {
