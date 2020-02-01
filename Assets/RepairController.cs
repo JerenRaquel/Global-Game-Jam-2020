@@ -9,11 +9,12 @@ public class RepairController : MonoBehaviour
 
     public bool repairActive = false;
 
+    #region Checking for player on repair tile
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Player"))
         {
-            repairActive = true;
+            repairActive = true;    
         }
     }
 
@@ -22,6 +23,7 @@ public class RepairController : MonoBehaviour
         if(other.CompareTag("Player"))
             repairActive = false;
     }
+    #endregion
 
     void OnEnable()
     {

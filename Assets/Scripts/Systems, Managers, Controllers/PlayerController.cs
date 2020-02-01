@@ -10,14 +10,13 @@ public class PlayerController : MonoBehaviour
     
     [Header("Players")]
     public GameObject player1;
-    // public GameObject player2;
 
     [Header("Settings")]
     public float speed;
     public float dashSpeed;
     public float repairDelay;
 
-    public InputMaster input;
+    public InputMaster input;   //inputmaster name . action map . action += ctx => func()
     private float dashSpeedCTX = 1;
     [HideInInspector]
     public static bool interacting = false;
@@ -25,24 +24,11 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         input = new InputMaster();
+        //getting input
         input.Player1.Movement.performed += P1Movement => Move1(P1Movement.ReadValue<Vector2>());
         input.Player1.Interact.started += ctx => StartCoroutine(Interact());
-        // input.Player2.Movement.performed += P2Movement => Move2(P2Movement.ReadValue<Vector2>());
-        // input.Player1.Movement.canceled += P1Movement => EndDaWsh();
-        // input.Player1.Dash.started += P1Dash => StartDash();
-        // input.Player1.Dash.canceled += P1Dash => EndDash();
     }
-
-    // void StartDash()
-    // {
-    //     dashSpeedCTX = dashSpeed;
-    // }
-
-    // void EndDash()
-    // {
-    //     dashSpeedCTX = 1;
-    // }
-
+    
     IEnumerator Interact()
     {
         interacting = true;
@@ -57,10 +43,6 @@ public class PlayerController : MonoBehaviour
     {
         player1.GetComponent<Rigidbody2D>().position += dir * speed * Time.deltaTime * dashSpeedCTX;
     }
-    // void Move2(Vector2 dir)
-    // {
-    //     player2.GetComponent<Rigidbody2D>().position += dir * speed * Time.deltaTime * dashSpeedCTX;
-    // }
 
     private void OnEnable()
     {
@@ -70,6 +52,5 @@ public class PlayerController : MonoBehaviour
     private void OnDisable()
     {
         input.Disable();
-        // EndDash();
     }
 }

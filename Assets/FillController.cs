@@ -14,6 +14,7 @@ public class FillController : MonoBehaviour
         fillBar.fillAmount = 0;
     }
 
+    //addes a float amount to the fill amount
     public void IncreaseFill(float amount)
     {
         if(fillBar.fillAmount >= 1)

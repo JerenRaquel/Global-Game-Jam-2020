@@ -11,7 +11,7 @@ public class SceneController : MonoBehaviour
         LoadScene(1);
     }
 
-    void LoadScene(int sceneIndex)
+    public void LoadScene(int sceneIndex)
     {
         for (int i = 1; i < SceneManager.sceneCount; i++)
         {

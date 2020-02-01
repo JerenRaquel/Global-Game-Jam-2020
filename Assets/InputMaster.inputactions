@@ -14,14 +14,6 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Dash",
-                    "type": "Button",
-                    "id": "ddf417de-37d1-4978-a3cb-3f17db7b2b85",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "Press"
-                },
-                {
                     "name": "Interact",
                     "type": "Button",
                     "id": "d8063d65-17e3-42a5-a758-a7a0bf6efcbd",
@@ -140,28 +132,6 @@
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "4454dc4e-2211-4896-8cde-4e2efcfae2e2",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KeyBoard",
-                    "action": "Dash",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "6f44de40-a7a3-4f35-9925-aede4227709b",
-                    "path": "<SwitchProControllerHID>/buttonSouth",
-                    "interactions": "Hold",
-                    "processors": "",
-                    "groups": "KeyBoard",
-                    "action": "Dash",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
