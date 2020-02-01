@@ -33,6 +33,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""d8063d65-17e3-42a5-a758-a7a0bf6efcbd"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
                 }
             ],
             ""bindings"": [
@@ -92,7 +100,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""2D Vector"",
+                    ""name"": ""Move"",
                     ""id"": ""9e174fad-66e8-4397-b6ad-13be4c90899c"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
@@ -105,7 +113,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 {
                     ""name"": ""up"",
                     ""id"": ""d6a4573a-67ec-4296-9540-c208b714f5e7"",
-                    ""path"": ""<SwitchProControllerHID>/leftStick/up"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KeyBoard"",
@@ -116,7 +124,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 {
                     ""name"": ""down"",
                     ""id"": ""1640633c-3530-4879-a247-063ab433a04b"",
-                    ""path"": ""<SwitchProControllerHID>/leftStick/down"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KeyBoard"",
@@ -127,7 +135,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 {
                     ""name"": ""left"",
                     ""id"": ""bd4c5f8e-4e12-4a05-a38a-fd772f95a4fa"",
-                    ""path"": ""<SwitchProControllerHID>/leftStick/left"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KeyBoard"",
@@ -138,7 +146,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 {
                     ""name"": ""right"",
                     ""id"": ""c2422306-b205-467b-9cec-faa949f42fea"",
-                    ""path"": ""<SwitchProControllerHID>/leftStick/right"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KeyBoard"",
@@ -165,6 +173,28 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""KeyBoard"",
                     ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5b67bad9-9eb8-43f5-b494-a9efbfdf8b8f"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0e4e07a5-bebe-4755-bae5-d11628f0815b"",
+                    ""path"": ""<SwitchProControllerHID>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard"",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -194,6 +224,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_Player1 = asset.FindActionMap("Player1", throwIfNotFound: true);
         m_Player1_Movement = m_Player1.FindAction("Movement", throwIfNotFound: true);
         m_Player1_Dash = m_Player1.FindAction("Dash", throwIfNotFound: true);
+        m_Player1_Interact = m_Player1.FindAction("Interact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -245,12 +276,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private IPlayer1Actions m_Player1ActionsCallbackInterface;
     private readonly InputAction m_Player1_Movement;
     private readonly InputAction m_Player1_Dash;
+    private readonly InputAction m_Player1_Interact;
     public struct Player1Actions
     {
         private @InputMaster m_Wrapper;
         public Player1Actions(@InputMaster wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Player1_Movement;
         public InputAction @Dash => m_Wrapper.m_Player1_Dash;
+        public InputAction @Interact => m_Wrapper.m_Player1_Interact;
         public InputActionMap Get() { return m_Wrapper.m_Player1; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -266,6 +299,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Dash.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnDash;
                 @Dash.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnDash;
                 @Dash.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnDash;
+                @Interact.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnInteract;
+                @Interact.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnInteract;
+                @Interact.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnInteract;
             }
             m_Wrapper.m_Player1ActionsCallbackInterface = instance;
             if (instance != null)
@@ -276,6 +312,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Dash.started += instance.OnDash;
                 @Dash.performed += instance.OnDash;
                 @Dash.canceled += instance.OnDash;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
             }
         }
     }
@@ -293,5 +332,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
 }

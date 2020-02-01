@@ -20,6 +20,14 @@
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "Press"
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "d8063d65-17e3-42a5-a758-a7a0bf6efcbd",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press"
                 }
             ],
             "bindings": [
@@ -79,7 +87,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "2D Vector",
+                    "name": "Move",
                     "id": "9e174fad-66e8-4397-b6ad-13be4c90899c",
                     "path": "2DVector",
                     "interactions": "",
@@ -92,7 +100,7 @@
                 {
                     "name": "up",
                     "id": "d6a4573a-67ec-4296-9540-c208b714f5e7",
-                    "path": "<SwitchProControllerHID>/leftStick/up",
+                    "path": "<Gamepad>/leftStick/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyBoard",
@@ -103,7 +111,7 @@
                 {
                     "name": "down",
                     "id": "1640633c-3530-4879-a247-063ab433a04b",
-                    "path": "<SwitchProControllerHID>/leftStick/down",
+                    "path": "<Gamepad>/leftStick/down",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyBoard",
@@ -114,7 +122,7 @@
                 {
                     "name": "left",
                     "id": "bd4c5f8e-4e12-4a05-a38a-fd772f95a4fa",
-                    "path": "<SwitchProControllerHID>/leftStick/left",
+                    "path": "<Gamepad>/leftStick/left",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyBoard",
@@ -125,7 +133,7 @@
                 {
                     "name": "right",
                     "id": "c2422306-b205-467b-9cec-faa949f42fea",
-                    "path": "<SwitchProControllerHID>/leftStick/right",
+                    "path": "<Gamepad>/leftStick/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyBoard",
@@ -152,6 +160,28 @@
                     "processors": "",
                     "groups": "KeyBoard",
                     "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5b67bad9-9eb8-43f5-b494-a9efbfdf8b8f",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyBoard",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0e4e07a5-bebe-4755-bae5-d11628f0815b",
+                    "path": "<SwitchProControllerHID>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyBoard",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

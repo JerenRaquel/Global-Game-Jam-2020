@@ -4,36 +4,49 @@ using UnityEngine;
 
 public class FloorGenerator : MonoBehaviour
 {
+    #region Instance
+    public static FloorGenerator instance = null;
+
+    void Awake()
+    {
+        if(instance == null)
+            instance = this;
+        else
+            Destroy(this);
+    }
+    #endregion
+
+    public delegate void GenFloor();
+    public static event GenFloor NewFloor;
+
     public Transform OutputTransform;
-    public FloorData toBeConvertedLevel;
+    public FloorData[] toBeConvertedLevel;
     public ColorMappings[] colorMappings;
 
     [Header("Settings")]
     public Vector2 offset = new Vector2(6, 4.5f);  //spacing between tile
 
-    private Texture2D level;
-
     // Start is called before the first frame update
     void Start()
     {
-        level = toBeConvertedLevel.levelArt;
-        Generate();
+        NewFloor();
     }
 
     //Loops through each pixel and generates the coorisponding tile
-    void Generate()
+    public void Generate(int levelIndex)
     {
+        Texture2D level = toBeConvertedLevel[levelIndex].levelArt;
         for(int x = 0; x < level.width; x++)
         {
             for(int y = 0; y < level.height; y++)
             {
-                GenerateTile(x, y);
+                GenerateTile(x, y, level);
             }
         }
     }
 
     //Created a tile based on the pixel color of that pixel
-    void GenerateTile(int x, int y)
+    void GenerateTile(int x, int y, Texture2D level)
     {
         Color color = level.GetPixel(x, y);
         Vector2 positionWithOffset = new Vector2(x - offset.x, y - offset.y);
