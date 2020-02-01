@@ -15,17 +15,20 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float dashSpeed;
     public float repairDelay;
+    public bool useKeyBoard = false;
 
     public InputMaster input;   //inputmaster name . action map . action += ctx => func()
     private float dashSpeedCTX = 1;
     [HideInInspector]
     public static bool interacting = false;
+    private Vector2 movement;
 
     void Awake()
     {
         input = new InputMaster();
         //getting input
-        input.Player1.Movement.performed += P1Movement => Move1(P1Movement.ReadValue<Vector2>());
+        if(!useKeyBoard)
+            input.Player1.Movement.performed += P1Movement => movement = P1Movement.ReadValue<Vector2>();//Move1(P1Movement.ReadValue<Vector2>());
         input.Player1.Interact.started += ctx => StartCoroutine(Interact());
     }
     
@@ -41,9 +44,18 @@ public class PlayerController : MonoBehaviour
     }
 
     //moves the player
-    void Move1(Vector2 dir)
+    // void Move1(Vector2 dir)
+    // {
+    //     player1.GetComponent<Rigidbody2D>().position += dir * speed * Time.deltaTime * dashSpeedCTX;
+    // }
+    void FixedUpdate()
     {
-        player1.GetComponent<Rigidbody2D>().position += dir * speed * Time.deltaTime * dashSpeedCTX;
+        if(useKeyBoard)
+        {
+            movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        }
+        
+        player1.transform.Translate(movement * speed * Time.deltaTime);
     }
 
     //needed for unity input system
