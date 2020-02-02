@@ -1,16 +1,13 @@
 fileFormatVersion: 2
-guid: 59be8dad823c10447a56f6081bcb57e2
+guid: cf43bdf101acc1644805a3333aad8c17
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8113171414992458262
-    second: Key
+      213: -3883709467560197257
+    second: Yes
   - first:
-      213: 7424782580926082038
-    second: Speed
-  - first:
-      213: 584717278712940112
-    second: Repair
+      213: 6199698165852916722
+    second: No
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -54,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -107,64 +104,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Key
+      name: Yes
       rect:
         serializedVersion: 2
         x: 0
-        y: 48
-        width: 16
-        height: 16
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 571d47aa1b32fe8469eed48ef850052b
-      internalID: -8113171414992458262
+      spriteID: 88a183557e8a1da4089d1baeaa6ca1e0
+      internalID: -3883709467560197257
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Speed
+      name: No
       rect:
         serializedVersion: 2
-        x: 16
-        y: 48
-        width: 16
-        height: 16
+        x: 128
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2da20c8e98f3264a8071edb09cdee55
-      internalID: 7424782580926082038
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Repair
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 741eb6fcc704f4246a27b323c3f53a77
-      internalID: 584717278712940112
+      spriteID: 53592ea5bed14274c93507d2c3b1a89a
+      internalID: 6199698165852916722
       vertices: []
       indices: 
       edges: []
