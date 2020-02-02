@@ -4,6 +4,18 @@ using UnityEngine;
 
 public class RepairController : MonoBehaviour
 {
+    #region Instance
+    public static RepairController instance = null;
+
+    void Awake()
+    {
+        if(instance == null)
+            instance = this;
+        else
+            Destroy(this);
+    }
+    #endregion
+
     public FillController fillController;
     public float rate;
 
