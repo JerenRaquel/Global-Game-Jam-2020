@@ -434,7 +434,21 @@ PrefabInstance:
         type: 3}
       propertyPath: toBeConvertedLevel.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: e16e1f5b9e13efd47b35eb87a2e84011,
-        type: 2}
+      objectReference: {fileID: 2800000, guid: e0c60ee0b43511845877148285f93e59, type: 3}
+    - target: {fileID: 24894242484981665, guid: 8f0ea8912c6033e4a9abcd62ff492356,
+        type: 3}
+      propertyPath: toBeConvertedLevel.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: c1f46db3bd65c204993ccc5f8f999237, type: 3}
+    - target: {fileID: 24894242484981665, guid: 8f0ea8912c6033e4a9abcd62ff492356,
+        type: 3}
+      propertyPath: toBeConvertedLevel.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: e0dfc428e8ecc3543a7680d4e5ec3740, type: 3}
+    - target: {fileID: 24894242484981665, guid: 8f0ea8912c6033e4a9abcd62ff492356,
+        type: 3}
+      propertyPath: toBeConvertedLevel.Array.data[2]
+      value: 
+      objectReference: {fileID: 2800000, guid: a7853ae161020774ca82ea01f254e2b1, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f0ea8912c6033e4a9abcd62ff492356, type: 3}

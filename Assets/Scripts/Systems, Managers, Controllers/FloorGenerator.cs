@@ -21,7 +21,7 @@ public class FloorGenerator : MonoBehaviour
     public static event GenFloor NewFloor;
 
     public Transform OutputTransform;
-    public FloorData[] toBeConvertedLevel;
+    public Texture2D[] toBeConvertedLevel;
     public ColorMappings[] colorMappings;
 
     [Header("Settings")]
@@ -41,7 +41,7 @@ public class FloorGenerator : MonoBehaviour
             Destroy(child.gameObject);
         }
         
-        Texture2D level = toBeConvertedLevel[levelIndex].levelArt;
+        Texture2D level = toBeConvertedLevel[levelIndex];
         for(int x = 0; x < level.width; x++)
         {
             for(int y = 0; y < level.height; y++)
