@@ -5,12 +5,24 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {   
+    #region Instance
+    public static PlayerController instance = null;
+
+    void Awake()
+    {
+        if(instance == null)
+            instance = this;
+        else
+            Destroy(this);
+    }
+    #endregion
+    
     public delegate void OnInteraction();
     public static event OnInteraction Interacting;
     
     [Header("Players")]
     public GameObject player1;
-    public Animator animator;
+    //public Animator animator;
 
     [Header("Settings")]
     public float speed;
@@ -24,18 +36,10 @@ public class PlayerController : MonoBehaviour
     private Vector2 movement;
     private Rigidbody2D rb;
 
-    public bool hasKey = false;
     private bool powerUp = false;
-    public static PlayerController instance = null;
 
     void Awake()
     {
-        if(instance == null){
-            instance = this;
-        }
-        else{
-            Destroy(this);
-        }
         input = new InputMaster();
         //getting input
         if(useKeyBoard)
@@ -66,7 +70,7 @@ public class PlayerController : MonoBehaviour
     void Move1(Vector2 dir)
     {
         player1.GetComponent<Rigidbody2D>().position += dir * speed * Time.deltaTime * dashSpeedCTX;
-        animator.SetBool("IsMoving", Mathf.Abs(dir.x) > 0 || Mathf.Abs(dir.y) > 0);
+        //animator.SetBool("IsMoving", Mathf.Abs(dir.x) > 0 || Mathf.Abs(dir.y) > 0);
     }
     void FixedUpdate()
     {
