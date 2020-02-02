@@ -8,13 +8,14 @@ public class DoorController : MonoBehaviour
     private bool checkE;
     public float progress;
     public float maxProgress = 100;
-    public PlayerController pC = PlayerController.instance;
+    public PlayerController pC;
 
     private SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        pC = PlayerController.instance;
     }
 
     // Update is called once per frame
@@ -40,9 +41,10 @@ public class DoorController : MonoBehaviour
     {
         if(other.CompareTag("Player")){
             checkE = true;
-            if(pC != null && pC.hasKey){
-                progress = 100;
+            if(pC != null && pC.hasKey && progress < maxProgress){
+                progress = maxProgress;
                 pC.hasKey = false;
+                Debug.Log("Key used");
             }
         }
     }
