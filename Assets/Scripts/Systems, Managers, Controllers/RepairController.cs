@@ -6,8 +6,8 @@ public class RepairController : MonoBehaviour
 {
     public FillController fillController;
     public float rate;
-    public float ogRate;
-    public bool powerUp = false;
+    private float ogRate;
+    private bool powerUp = false;
 
     public bool repairActive = false;
 
