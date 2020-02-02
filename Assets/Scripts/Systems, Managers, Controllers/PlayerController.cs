@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 movement;
     private Rigidbody2D rb;
 
+    public bool hasKey = false;
     private bool powerUp = false;
 
     void Awake()

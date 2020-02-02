@@ -30,8 +30,13 @@ public class DoorController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        PlayerController pC = other.GetComponent<PlayerController>();
         if(other.CompareTag("Player")){
             checkE = true;
+            if(pC.hasKey){
+                progress = 100;
+                pC.hasKey = false;
+            }
         }
     }
 
