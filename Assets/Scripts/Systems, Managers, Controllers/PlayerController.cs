@@ -10,10 +10,11 @@ public class PlayerController : MonoBehaviour
     
     [Header("Players")]
     public GameObject player1;
-    public Animator animator;
+    //public Animator animator;
 
     [Header("Settings")]
     public float speed;
+    private float ogSpeed;
     public float dashSpeed;
     public float repairDelay;
     public bool useKeyBoard = false;
@@ -22,6 +23,8 @@ public class PlayerController : MonoBehaviour
     private float dashSpeedCTX = 1;
     private Vector2 movement;
     private Rigidbody2D rb;
+
+    private bool powerUp = false;
 
     void Awake()
     {
@@ -46,23 +49,31 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = player1.GetComponent<Rigidbody2D>();
-        StartCoroutine(Interact());
+        ogSpeed = speed;
+        //StartCoroutine(Interact());
     }
 
     //moves the player
     void Move1(Vector2 dir)
     {
         player1.GetComponent<Rigidbody2D>().position += dir * speed * Time.deltaTime * dashSpeedCTX;
-        animator.SetBool("IsMoving", Mathf.Abs(dir.x) > 0 || Mathf.Abs(dir.y) > 0);
+        //animator.SetBool("IsMoving", Mathf.Abs(dir.x) > 0 || Mathf.Abs(dir.y) > 0);
     }
     void FixedUpdate()
     {
         if(useKeyBoard)
         {
-        animator.SetBool("IsMoving", Mathf.Abs(movement.x) > 0 || Mathf.Abs(movement.y) > 0);
+       // animator.SetBool("IsMoving", Mathf.Abs(movement.x) > 0 || Mathf.Abs(movement.y) > 0);
             movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         
             player1.transform.Translate(movement * speed * Time.deltaTime);
+            if(speed != ogSpeed && !powerUp){
+                StartCoroutine(PowerUpTime());
+                powerUp =  true;
+            }
+            else if(speed == ogSpeed){
+                powerUp = false;
+            }
         }
     }
 
@@ -75,5 +86,15 @@ public class PlayerController : MonoBehaviour
     private void OnDisable()
     {
         input.Disable();
+    }
+
+    IEnumerator PowerUpTime()
+    {
+        for(int i = 5; i > 0; i--)
+        {
+            Debug.Log("Waiting");
+            yield return new WaitForSeconds(1);
+        }
+        speed = ogSpeed;
     }
 }

@@ -6,8 +6,34 @@ public class RepairController : MonoBehaviour
 {
     public FillController fillController;
     public float rate;
+    public float ogRate;
+    public bool powerUp = false;
 
     public bool repairActive = false;
+
+    void Start(){
+        ogRate = rate;
+    }
+
+    void FixedUpdate(){
+        if(rate != ogRate && !powerUp){
+                StartCoroutine(PowerUpTime());
+                powerUp =  true;
+        }
+        else if(rate == ogRate){
+            powerUp = false;
+        }
+    }
+
+    IEnumerator PowerUpTime()
+    {
+        for(int i = 5; i > 0; i--)
+        {
+            Debug.Log("Waiting");
+            yield return new WaitForSeconds(1);
+        }
+        rate = ogRate;
+    }
 
     #region Checking for player on repair tile
     void OnTriggerEnter2D(Collider2D other)
