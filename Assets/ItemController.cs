@@ -7,6 +7,8 @@ public class ItemController : MonoBehaviour
     public int itemType;
     public SpriteRenderer spriteRenderer;
     public RepairController repair;
+    public GameObject floor;
+    public GameObject parent;
 
     public Sprite speedItem;
     public Sprite repairItem;
@@ -15,6 +17,7 @@ public class ItemController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        itemType = Random.Range(1, 4);
         if(itemType == 1){
             spriteRenderer.sprite = speedItem;
         }
@@ -33,7 +36,7 @@ public class ItemController : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other){
-        PlayerController player = other.GetComponent<PlayerController>();
+        PlayerController player = PlayerController.instance;
         if(itemType == 1){
             player.speed *= 1.5f;
         }
@@ -43,6 +46,7 @@ public class ItemController : MonoBehaviour
         else if(itemType == 3){
             player.hasKey = true;
         }
-        Destroy(gameObject);
+        Instantiate(floor, transform.position, Quaternion.identity, parent.transform);
+        Destroy(gameObject); 
     }
 }

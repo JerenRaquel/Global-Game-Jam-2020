@@ -27,11 +27,8 @@ public class RepairController : MonoBehaviour
 
     IEnumerator PowerUpTime()
     {
-        for(int i = 5; i > 0; i--)
-        {
-            Debug.Log("Waiting");
-            yield return new WaitForSeconds(1);
-        }
+        yield return new WaitForSeconds(5f);
+
         rate = ogRate;
     }
 

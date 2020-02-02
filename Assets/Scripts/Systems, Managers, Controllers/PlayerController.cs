@@ -5,18 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {   
-    #region Instance
     public static PlayerController instance = null;
-
-    void Awake()
-    {
-        if(instance == null)
-            instance = this;
-        else
-            Destroy(this);
-    }
-    #endregion
-    
     public delegate void OnInteraction();
     public static event OnInteraction Interacting;
     
@@ -36,10 +25,16 @@ public class PlayerController : MonoBehaviour
     private Vector2 movement;
     private Rigidbody2D rb;
 
+    public bool hasKey = false;
     private bool powerUp = false;
 
     void Awake()
     {
+        if(instance == null)
+            instance = this;
+        else
+            Destroy(this);
+
         input = new InputMaster();
         //getting input
         if(useKeyBoard)
@@ -103,11 +98,8 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator PowerUpTime()
     {
-        for(int i = 5; i > 0; i--)
-        {
-            Debug.Log("Waiting");
-            yield return new WaitForSeconds(1);
-        }
+        yield return new WaitForSeconds(5f);
+
         speed = ogSpeed;
     }
 }
