@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     private float dashSpeedCTX = 1;
     private Vector2 movement;
     private Rigidbody2D rb;
-    [HideInInspector]
+    // [HideInInspector]
     public bool hasKey = false;
     private float ogSpeed;
 
