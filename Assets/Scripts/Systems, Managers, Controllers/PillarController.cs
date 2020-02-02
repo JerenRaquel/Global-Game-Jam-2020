@@ -27,17 +27,17 @@ public class PillarController : MonoBehaviour
 
     void SetColor()
     {
-        if(health >= maxHealth)
+        if(health >= (maxHealth * 0.75))
         {
             sR.color = Color.white;
             shooked = false;
         }
-        else if(health > (maxHealth * .75))
+        else if(health > (maxHealth * .65))
         {
             sR.color = Color.blue;
             shooked = false;
         }
-        else if(health > (maxHealth * .50))
+        else if(health > (maxHealth * .45))
         {
             sR.color = Color.green;
             shooked = false;
@@ -62,10 +62,10 @@ public class PillarController : MonoBehaviour
             // fillController.SetFill(health);
             SetColor();
             if(checkE && health < maxHealth){
-                health += 10;// * Time.deltaTime;
+                health += 150 * Time.deltaTime;
             }
             else
-                health -= 15 * Time.deltaTime;
+                health -= 14f * Time.deltaTime;
         }
         else if(health <= 0){
             sR.color = Color.black;

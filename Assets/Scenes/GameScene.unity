@@ -335,7 +335,7 @@ MonoBehaviour:
   speed: 12
   dashSpeed: 2
   repairDelay: 0.5
-  useKeyBoard: 0
+  useKeyBoard: 1
   hasKey: 0
 --- !u!4 &1967744657
 Transform:

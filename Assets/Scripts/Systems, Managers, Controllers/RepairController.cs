@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RepairController : MonoBehaviour
 {
+
     public FillController fillController;
     public float rate;
     private float ogRate;
@@ -12,6 +13,7 @@ public class RepairController : MonoBehaviour
     public bool repairActive = false;
 
     void Start(){
+        rate = 2;
         ogRate = rate;
     }
 
