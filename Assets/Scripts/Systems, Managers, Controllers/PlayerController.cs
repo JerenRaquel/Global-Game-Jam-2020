@@ -37,9 +37,9 @@ public class PlayerController : MonoBehaviour
 
         input = new InputMaster();
         //getting input
-        if(useKeyBoard)
-            input.Player1.Movement.performed += P1Movement => movement = P1Movement.ReadValue<Vector2>();
-        else
+        // if(useKeyBoard)
+        //     input.Player1.Movement.performed += P1Movement => movement = P1Movement.ReadValue<Vector2>();
+        // else
             input.Player1.Movement.performed += P1Movement => Move1(P1Movement.ReadValue<Vector2>());
         // input.Player1.Interact.started += ctx => StartCoroutine(Interact());
     }
@@ -69,8 +69,8 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if(useKeyBoard)
-        {
+        // if(useKeyBoard)
+        // {
        // animator.SetBool("IsMoving", Mathf.Abs(movement.x) > 0 || Mathf.Abs(movement.y) > 0);
             movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         
@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
             else if(speed == ogSpeed){
                 powerUp = false;
             }
-        }
+        // }
     }
 
     //needed for unity input system
