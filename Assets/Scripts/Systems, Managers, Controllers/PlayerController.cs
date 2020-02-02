@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     
     [Header("Players")]
     public GameObject player1;
-    //public Animator animator;
+    public Animator animator;
 
     [Header("Settings")]
     public float speed;
