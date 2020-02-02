@@ -69,6 +69,7 @@ public class PillarController : MonoBehaviour
         }
         else if(health <= 0){
             sR.color = Color.black;
+            GameController.instance.EndGame();
         }
         //Debug.Log("health: " + health);
 

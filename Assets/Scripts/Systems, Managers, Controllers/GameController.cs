@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour
     #endregion
 
     public Animator animator;
+    public GameObject UI;
 
     #region Calls CreatedNewFloor through events
     void OnEnable()
@@ -39,5 +40,11 @@ public class GameController : MonoBehaviour
     public void Shake()
     {
         animator.SetTrigger("Shake");
+    }
+
+    public void EndGame()
+    {
+        UI.SetActive(true);
+        Time.timeScale = 0;
     }
 }
