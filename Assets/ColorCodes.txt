@@ -17,3 +17,4 @@ TJunctions:
 	Down: 00a8d5
 Elevator: b83dba	
 Pillars: 3f48cc
+Item: ec1c24

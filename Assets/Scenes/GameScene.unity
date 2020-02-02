@@ -332,7 +332,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player1: {fileID: 244015403}
-  animator: {fileID: 842229712}
   speed: 12
   dashSpeed: 2
   repairDelay: 0.5
@@ -426,6 +425,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 24894242484981665, guid: 8f0ea8912c6033e4a9abcd62ff492356,
         type: 3}
+      propertyPath: colorMappings.Array.size
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 24894242484981665, guid: 8f0ea8912c6033e4a9abcd62ff492356,
+        type: 3}
       propertyPath: toBeConvertedLevel
       value: 
       objectReference: {fileID: 11400000, guid: 31d98594db121f047a9b4f1ee875df92,
@@ -434,7 +438,47 @@ PrefabInstance:
         type: 3}
       propertyPath: toBeConvertedLevel.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: e16e1f5b9e13efd47b35eb87a2e84011,
-        type: 2}
+      objectReference: {fileID: 2800000, guid: e0c60ee0b43511845877148285f93e59, type: 3}
+    - target: {fileID: 24894242484981665, guid: 8f0ea8912c6033e4a9abcd62ff492356,
+        type: 3}
+      propertyPath: toBeConvertedLevel.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: c1f46db3bd65c204993ccc5f8f999237, type: 3}
+    - target: {fileID: 24894242484981665, guid: 8f0ea8912c6033e4a9abcd62ff492356,
+        type: 3}
+      propertyPath: toBeConvertedLevel.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: e0dfc428e8ecc3543a7680d4e5ec3740, type: 3}
+    - target: {fileID: 24894242484981665, guid: 8f0ea8912c6033e4a9abcd62ff492356,
+        type: 3}
+      propertyPath: toBeConvertedLevel.Array.data[2]
+      value: 
+      objectReference: {fileID: 2800000, guid: a7853ae161020774ca82ea01f254e2b1, type: 3}
+    - target: {fileID: 24894242484981665, guid: 8f0ea8912c6033e4a9abcd62ff492356,
+        type: 3}
+      propertyPath: colorMappings.Array.data[15].pixelColor.g
+      value: 0.10980392
+      objectReference: {fileID: 0}
+    - target: {fileID: 24894242484981665, guid: 8f0ea8912c6033e4a9abcd62ff492356,
+        type: 3}
+      propertyPath: colorMappings.Array.data[15].pixelColor.b
+      value: 0.14117648
+      objectReference: {fileID: 0}
+    - target: {fileID: 24894242484981665, guid: 8f0ea8912c6033e4a9abcd62ff492356,
+        type: 3}
+      propertyPath: colorMappings.Array.data[15].pixelColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 24894242484981665, guid: 8f0ea8912c6033e4a9abcd62ff492356,
+        type: 3}
+      propertyPath: colorMappings.Array.data[15].prefab
+      value: 
+      objectReference: {fileID: 5528076371571814284, guid: c68ce889cb6e74908883c4977131e691,
+        type: 3}
+    - target: {fileID: 24894242484981665, guid: 8f0ea8912c6033e4a9abcd62ff492356,
+        type: 3}
+      propertyPath: colorMappings.Array.data[15].pixelColor.r
+      value: 0.9254902
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f0ea8912c6033e4a9abcd62ff492356, type: 3}

@@ -5,16 +5,16 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {   
+    public static PlayerController instance = null;
     public delegate void OnInteraction();
     public static event OnInteraction Interacting;
     
     [Header("Players")]
     public GameObject player1;
-    public Animator animator;
+    //public Animator animator;
 
     [Header("Settings")]
     public float speed;
-    private float ogSpeed;
     public float dashSpeed;
     public float repairDelay;
     public bool useKeyBoard = false;
@@ -23,24 +23,22 @@ public class PlayerController : MonoBehaviour
     private float dashSpeedCTX = 1;
     private Vector2 movement;
     private Rigidbody2D rb;
-
+    [HideInInspector]
     public bool hasKey = false;
-    private bool powerUp = false;
-    public static PlayerController instance = null;
+    private float ogSpeed;
 
     void Awake()
     {
-        if(instance == null){
+        if(instance == null)
             instance = this;
-        }
-        else{
+        else
             Destroy(this);
-        }
+
         input = new InputMaster();
         //getting input
-        if(useKeyBoard)
-            input.Player1.Movement.performed += P1Movement => movement = P1Movement.ReadValue<Vector2>();
-        else
+        // if(useKeyBoard)
+        //     input.Player1.Movement.performed += P1Movement => movement = P1Movement.ReadValue<Vector2>();
+        // else
             input.Player1.Movement.performed += P1Movement => Move1(P1Movement.ReadValue<Vector2>());
         // input.Player1.Interact.started += ctx => StartCoroutine(Interact());
     }
@@ -66,24 +64,14 @@ public class PlayerController : MonoBehaviour
     void Move1(Vector2 dir)
     {
         player1.GetComponent<Rigidbody2D>().position += dir * speed * Time.deltaTime * dashSpeedCTX;
-        animator.SetBool("IsMoving", Mathf.Abs(dir.x) > 0 || Mathf.Abs(dir.y) > 0);
+        //animator.SetBool("IsMoving", Mathf.Abs(dir.x) > 0 || Mathf.Abs(dir.y) > 0);
     }
     void FixedUpdate()
     {
-        if(useKeyBoard)
-        {
         animator.SetBool("IsMoving", Mathf.Abs(movement.x) > 0 || Mathf.Abs(movement.y) > 0);
             movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         
             player1.transform.Translate(movement * speed * Time.deltaTime);
-            if(speed != ogSpeed && !powerUp){
-                StartCoroutine(PowerUpTime());
-                powerUp =  true;
-            }
-            else if(speed == ogSpeed){
-                powerUp = false;
-            }
-        }
     }
 
     //needed for unity input system
@@ -97,13 +85,15 @@ public class PlayerController : MonoBehaviour
         input.Disable();
     }
 
-    IEnumerator PowerUpTime()
+    //this is needed for some reason?
+    public void StartPowerUpTime()
     {
-        for(int i = 5; i > 0; i--)
-        {
-            Debug.Log("Waiting");
-            yield return new WaitForSeconds(1);
-        }
+        StartCoroutine(PowerUpTime());
+    }
+
+    public IEnumerator PowerUpTime()
+    {
+        yield return new WaitForSeconds(5f);
         speed = ogSpeed;
     }
 }

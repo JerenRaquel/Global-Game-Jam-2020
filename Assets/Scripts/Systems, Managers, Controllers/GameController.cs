@@ -19,6 +19,8 @@ public class GameController : MonoBehaviour
     public Animator animator;
     public GameObject UI;
 
+    private int prevFloor;
+
     #region Calls CreatedNewFloor through events
     void OnEnable()
     {
@@ -34,7 +36,13 @@ public class GameController : MonoBehaviour
     //Creates a new random floor from the array
     public void CreatedNewFloor()
     {
-        FloorGenerator.instance.Generate(Random.Range(0, FloorGenerator.instance.toBeConvertedLevel.Length));
+        int currentFloor = Random.Range(0, FloorGenerator.instance.toBeConvertedLevel.Length);
+        while(currentFloor == prevFloor)
+        {
+            currentFloor = Random.Range(0, FloorGenerator.instance.toBeConvertedLevel.Length);
+        }
+        prevFloor = currentFloor;
+        FloorGenerator.instance.Generate(currentFloor);
     }
 
     public void Shake()
