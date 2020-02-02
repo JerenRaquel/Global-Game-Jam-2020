@@ -19,7 +19,6 @@ public class SceneController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //TEMP CHANGE TO INTRO OR MENU SCENE LATER
         LoadScene(1);
     }
 
@@ -27,10 +26,14 @@ public class SceneController : MonoBehaviour
     //pass the index of the scene to load that scene
     public void LoadScene(int sceneIndex)
     {
-        for (int i = 1; i < SceneManager.sceneCount; i++)
+        if(SceneManager.sceneCount > 1)
         {
-            SceneManager.UnloadSceneAsync(i);
+            for (int i = 1; i < SceneManager.sceneCount; i++)
+            {
+                SceneManager.UnloadSceneAsync(i);
+            }
         }
+        
         SceneManager.LoadSceneAsync(sceneIndex, LoadSceneMode.Additive);
     }
 }

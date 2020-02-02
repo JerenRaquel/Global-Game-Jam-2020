@@ -25,6 +25,12 @@ public class RepairController : MonoBehaviour
         }
     }
 
+    //this is needed for some weird reason?
+    public void StartPowerUpTime()
+    {
+        StartCoroutine(PowerUpTime());
+    }
+
     IEnumerator PowerUpTime()
     {
         yield return new WaitForSeconds(5f);

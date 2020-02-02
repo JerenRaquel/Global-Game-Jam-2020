@@ -8,7 +8,7 @@ public class ItemController : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public RepairController repair;
     public GameObject floor;
-    public GameObject parent;
+    // public GameObject parent;
 
     public Sprite speedItem;
     public Sprite repairItem;
@@ -29,24 +29,20 @@ public class ItemController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void OnTriggerEnter2D(Collider2D other){
         PlayerController player = PlayerController.instance;
         if(itemType == 1){
             player.speed *= 1.5f;
+            PlayerController.instance.StartPowerUpTime();
         }
         else if(itemType == 2){
             repair.rate *= 1.15f;
+            repair.StartPowerUpTime();
         }
         else if(itemType == 3){
             player.hasKey = true;
         }
-        Instantiate(floor, transform.position, Quaternion.identity, parent.transform);
+        Instantiate(floor, transform.position, Quaternion.identity, FloorGenerator.instance.OutputTransform);
         Destroy(gameObject); 
     }
 }

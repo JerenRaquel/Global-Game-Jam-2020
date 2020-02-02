@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour
 
     [Header("Settings")]
     public float speed;
-    private float ogSpeed;
     public float dashSpeed;
     public float repairDelay;
     public bool useKeyBoard = false;
@@ -24,9 +23,9 @@ public class PlayerController : MonoBehaviour
     private float dashSpeedCTX = 1;
     private Vector2 movement;
     private Rigidbody2D rb;
-
+    [HideInInspector]
     public bool hasKey = false;
-    private bool powerUp = false;
+    private float ogSpeed;
 
     void Awake()
     {
@@ -75,13 +74,6 @@ public class PlayerController : MonoBehaviour
             movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         
             player1.transform.Translate(movement * speed * Time.deltaTime);
-            if(speed != ogSpeed && !powerUp){
-                StartCoroutine(PowerUpTime());
-                powerUp =  true;
-            }
-            else if(speed == ogSpeed){
-                powerUp = false;
-            }
         // }
     }
 
@@ -96,10 +88,15 @@ public class PlayerController : MonoBehaviour
         input.Disable();
     }
 
-    IEnumerator PowerUpTime()
+    //this is needed for some reason?
+    public void StartPowerUpTime()
+    {
+        StartCoroutine(PowerUpTime());
+    }
+
+    public IEnumerator PowerUpTime()
     {
         yield return new WaitForSeconds(5f);
-
         speed = ogSpeed;
     }
 }
