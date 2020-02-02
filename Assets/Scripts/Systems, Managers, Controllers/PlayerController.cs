@@ -42,7 +42,8 @@ public class PlayerController : MonoBehaviour
     {
         while(true)
         {
-            Interacting();
+            if(Interacting != null)
+                Interacting();
             yield return new WaitForSeconds(repairDelay);
         }
     }
@@ -50,7 +51,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = player1.GetComponent<Rigidbody2D>();
         ogSpeed = speed;
-        //StartCoroutine(Interact());
+        StartCoroutine(Interact());
     }
 
     //moves the player
