@@ -19,10 +19,14 @@ public class FillController : MonoBehaviour
     {
         if(fillBar.fillAmount >= 1)
         {
-            isDone = true;
-            GameController.instance.CreatedNewFloor();  
+            isDone = true; 
             return;
         }
         fillBar.fillAmount += (amount / 100);
+    }
+
+    public void SetFill(float amount)
+    {
+        fillBar.fillAmount = (amount / 100);
     }
 }

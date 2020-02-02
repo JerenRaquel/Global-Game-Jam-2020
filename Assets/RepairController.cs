@@ -42,7 +42,7 @@ public class RepairController : MonoBehaviour
     {
         if(fillController.isDone)
         {
-            PlayerController.interacting = false;
+            GameController.instance.CreatedNewFloor(); 
             return;
         }
         //increase the fill gauge as long as the player is repairing it

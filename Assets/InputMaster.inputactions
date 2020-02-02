@@ -3,33 +3,29 @@
     "maps": [
         {
             "name": "Player1",
-            "id": "fde2779b-c659-49e1-a1e4-b60aa52d5017",
+            "id": "824697ae-db66-4018-8e34-5af6932b8114",
             "actions": [
                 {
                     "name": "Movement",
                     "type": "PassThrough",
-                    "id": "1cccc74e-2b7c-477f-94fb-ff4e041654f1",
-<<<<<<< HEAD
-                    "expectedControlType": "Button",
-=======
+                    "id": "a9703fb2-e931-42b9-a4f7-916acc37b746",
                     "expectedControlType": "Vector2",
->>>>>>> bef181be44cb9a6b311f5b8f4d27e10aecd78096
                     "processors": "",
                     "interactions": ""
                 },
                 {
                     "name": "Interact",
                     "type": "Button",
-                    "id": "d8063d65-17e3-42a5-a758-a7a0bf6efcbd",
+                    "id": "21367c92-4665-4561-9568-4728aa5bd487",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "Press"
+                    "interactions": ""
                 }
             ],
             "bindings": [
                 {
                     "name": "2D Vector",
-                    "id": "d4bb0b09-1bf1-48b9-99ad-6a1d11ed9127",
+                    "id": "e652b062-a1a8-445f-8715-f2ddab5e77f2",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -40,51 +36,51 @@
                 },
                 {
                     "name": "up",
-                    "id": "0c83c7f5-651f-4e5b-8373-7589ee08d8c1",
+                    "id": "1a1b17f6-6b4f-4a58-a905-c733098f08ae",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "KeyBoard",
+                    "groups": "Main",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "down",
-                    "id": "a7b745cd-9269-4b8e-ad8d-d09ebfd9ecf4",
+                    "id": "b0dd0972-5a5a-43fd-a7c3-3fba34d038de",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "KeyBoard",
+                    "groups": "Main",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "left",
-                    "id": "eaaffa7a-c6a7-445a-a6a7-bb9d5c13be81",
-                    "path": "<Keyboard>/a",
+                    "id": "69b37c32-252c-4b62-ad22-7db0760fa64f",
+                    "path": "<SwitchProControllerHID>/buttonEast",
                     "interactions": "",
                     "processors": "",
-                    "groups": "KeyBoard",
+                    "groups": "Main",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "right",
-                    "id": "021b7be0-fa88-49c4-8511-56dbd9249b03",
+                    "id": "dee623c9-e537-4ef6-843b-66f6bc1e6218",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "KeyBoard",
+                    "groups": "Main",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "Move",
-                    "id": "9e174fad-66e8-4397-b6ad-13be4c90899c",
+                    "name": "2D Vector",
+                    "id": "9971ce2b-943f-460c-a385-1f11dacb1a25",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -95,66 +91,66 @@
                 },
                 {
                     "name": "up",
-                    "id": "d6a4573a-67ec-4296-9540-c208b714f5e7",
-                    "path": "<Gamepad>/leftStick/up",
+                    "id": "9ea132a0-db89-460c-b77f-19381be9d04a",
+                    "path": "<SwitchProControllerHID>/leftStick/up",
                     "interactions": "",
                     "processors": "",
-                    "groups": "KeyBoard",
+                    "groups": "Main",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "down",
-                    "id": "1640633c-3530-4879-a247-063ab433a04b",
-                    "path": "<Gamepad>/leftStick/down",
+                    "id": "ede5b492-4997-4e21-b087-981b8a12561d",
+                    "path": "<SwitchProControllerHID>/leftStick/down",
                     "interactions": "",
                     "processors": "",
-                    "groups": "KeyBoard",
+                    "groups": "Main",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "left",
-                    "id": "bd4c5f8e-4e12-4a05-a38a-fd772f95a4fa",
-                    "path": "<Gamepad>/leftStick/left",
+                    "id": "6daab94a-d770-4d6d-8247-a8ab159f8059",
+                    "path": "<SwitchProControllerHID>/leftStick/left",
                     "interactions": "",
                     "processors": "",
-                    "groups": "KeyBoard",
+                    "groups": "Main",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "right",
-                    "id": "c2422306-b205-467b-9cec-faa949f42fea",
-                    "path": "<Gamepad>/leftStick/right",
+                    "id": "b141ba0f-64fc-4534-8391-8d630be4d113",
+                    "path": "<SwitchProControllerHID>/leftStick/right",
                     "interactions": "",
                     "processors": "",
-                    "groups": "KeyBoard",
+                    "groups": "Main",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "",
-                    "id": "5b67bad9-9eb8-43f5-b494-a9efbfdf8b8f",
+                    "id": "920e95ec-1df8-4607-b0ba-4b487e95223c",
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
-                    "groups": "KeyBoard",
+                    "groups": "Main",
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "0e4e07a5-bebe-4755-bae5-d11628f0815b",
+                    "id": "29586f4e-f041-4ada-927e-a785da15ac54",
                     "path": "<SwitchProControllerHID>/buttonEast",
                     "interactions": "",
                     "processors": "",
-                    "groups": "KeyBoard",
+                    "groups": "Main",
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -164,8 +160,8 @@
     ],
     "controlSchemes": [
         {
-            "name": "KeyBoard",
-            "bindingGroup": "KeyBoard",
+            "name": "Main",
+            "bindingGroup": "Main",
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
