@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Floor4
   m_EditorClassIdentifier: 
   isFloor1: 0
-  levelArt: {fileID: 0}
+  levelArt: {fileID: 2800000, guid: e0c60ee0b43511845877148285f93e59, type: 3}
