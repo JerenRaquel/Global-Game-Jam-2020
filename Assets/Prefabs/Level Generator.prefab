@@ -45,12 +45,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OutputTransform: {fileID: 24894244443279877}
-  toBeConvertedLevel: {fileID: 0}
+  toBeConvertedLevel:
+  - {fileID: 11400000, guid: 31d98594db121f047a9b4f1ee875df92, type: 2}
+  - {fileID: 11400000, guid: 060ae0c53d2cbe641b3fd8f7ffdbc148, type: 2}
+  - {fileID: 11400000, guid: 6873bbd3f2bb7c04b8830a41e04e675d, type: 2}
   colorMappings:
   - pixelColor: {r: 0, g: 0, b: 0, a: 1}
     prefab: {fileID: 6917516277719756770, guid: 560a203613010f84590615d2fb31615e,
       type: 3}
-  offset: {x: 6, y: 4.5}
+  - pixelColor: {r: 0.72156864, g: 0.23921569, b: 0.7294118, a: 1}
+    prefab: {fileID: 6930298472571843060, guid: 350bba2a814cc324aa40f6bf9acd4868,
+      type: 3}
+  - pixelColor: {r: 0.24705882, g: 0.28235295, b: 0.8, a: 1}
+    prefab: {fileID: 1535416681407205359, guid: 39a7f040ad90b6d43acef8a7f9612354,
+      type: 3}
+  - pixelColor: {r: 0, g: 0, b: 0.11764706, a: 1}
+    prefab: {fileID: 6917516277719756770, guid: 882ae7eb14fb13d479b0575a6125d121,
+      type: 3}
+  - pixelColor: {r: 0, g: 0, b: 0.15686275, a: 1}
+    prefab: {fileID: 6917516277719756770, guid: 527cd09c11f598c49b8cc4f0e7906f29,
+      type: 3}
+  - pixelColor: {r: 0, g: 0, b: 0.19607843, a: 1}
+    prefab: {fileID: 6917516277719756770, guid: 59a40f1fa6b4d9748808ff84205ae0db,
+      type: 3}
+  - pixelColor: {r: 0, g: 0, b: 0.23529412, a: 1}
+    prefab: {fileID: 6917516277719756770, guid: 19d1b2a3922b3f946b5a1b6ebf89e6e4,
+      type: 3}
+  - pixelColor: {r: 0.76862746, g: 1, b: 0.05490196, a: 1}
+    prefab: {fileID: 6917516277719756770, guid: 546105a8cfae9bf418cf8fe8e7764e87,
+      type: 3}
+  - pixelColor: {r: 0, g: 0, b: 0.27450982, a: 1}
+    prefab: {fileID: 6917516277719756770, guid: 1798cfad38f680e4e924bcd635482931,
+      type: 3}
+  - pixelColor: {r: 1, g: 0.49803922, b: 0.15294118, a: 1}
+    prefab: {fileID: 6917516277719756770, guid: 0202e77376a599646911f3dea72a8fac,
+      type: 3}
+  - pixelColor: {r: 1, g: 0.49803922, b: 0.19215687, a: 1}
+    prefab: {fileID: 6917516277719756770, guid: bf77d0dc876ab8f4da42d2a0a22ce5c0,
+      type: 3}
+  - pixelColor: {r: 0, g: 0.65882355, b: 0.9529412, a: 1}
+    prefab: {fileID: 6917516277719756770, guid: 3ad40de9730ac0c4f8593b9736e74bc3,
+      type: 3}
+  - pixelColor: {r: 0, g: 0.65882355, b: 0.9137255, a: 1}
+    prefab: {fileID: 6917516277719756770, guid: b8cc2131d3be776449e60fd71a6c0aa5,
+      type: 3}
+  - pixelColor: {r: 0, g: 0.65882355, b: 0.8745098, a: 1}
+    prefab: {fileID: 6917516277719756770, guid: 61df8b8696d5c274ab2b9f7fe6920fe4,
+      type: 3}
+  - pixelColor: {r: 0, g: 0.65882355, b: 0.8352941, a: 1}
+    prefab: {fileID: 6917516277719756770, guid: 669be79fb1a8de144a57957dfd6d0124,
+      type: 3}
+  offset: {x: 10, y: 7.5}
 --- !u!1 &24894244443279876
 GameObject:
   m_ObjectHideFlags: 0

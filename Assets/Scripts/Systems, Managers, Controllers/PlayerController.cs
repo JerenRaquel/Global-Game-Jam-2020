@@ -50,7 +50,8 @@ public class PlayerController : MonoBehaviour
     {
         while(true)
         {
-            Interacting();
+            if(Interacting != null)
+                Interacting();
             yield return new WaitForSeconds(repairDelay);
         }
     }

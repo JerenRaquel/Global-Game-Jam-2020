@@ -9,6 +9,7 @@ public class PillarController : MonoBehaviour
     bool ePressed;
     bool checkE;
     float maxHealth;
+    bool shooked = false;
 
     // Start is called before the first frame update
     void Start()
@@ -18,18 +19,40 @@ public class PillarController : MonoBehaviour
         sR = GetComponent<SpriteRenderer>();
     }
 
+    void Shake()
+    {
+        shooked = true;
+        GameController.instance.Shake();
+    }
+
     void SetColor()
     {
         if(health >= maxHealth)
+        {
             sR.color = Color.white;
+            shooked = false;
+        }
         else if(health > (maxHealth * .75))
+        {
             sR.color = Color.blue;
+            shooked = false;
+        }
         else if(health > (maxHealth * .50))
+        {
             sR.color = Color.green;
+            shooked = false;
+        }
         else if(health > (maxHealth * .25))
+        {
             sR.color =  Color.yellow;
+            shooked = false;
+        }
         else if(health > (maxHealth * .1))
+        {
             sR.color = Color.red;
+            if(!shooked)
+                Shake();
+        }
     }
 
     // Update is called once per frame
@@ -46,6 +69,7 @@ public class PillarController : MonoBehaviour
         }
         else if(health <= 0){
             sR.color = Color.black;
+            GameController.instance.EndGame();
         }
         //Debug.Log("health: " + health);
 
