@@ -13,6 +13,7 @@ public class FloorGenerator : MonoBehaviour
             instance = this;
         else
             Destroy(this);
+        NewFloor();
     }
     #endregion
 
@@ -27,10 +28,10 @@ public class FloorGenerator : MonoBehaviour
     public Vector2 offset = new Vector2(6, 4.5f);  //spacing between tile
 
     // Start is called before the first frame update
-    void Start()
-    {
-        NewFloor();
-    }
+    // void Start()
+    // {
+    //     NewFloor();
+    // }
 
     //Loops through each pixel and generates the coorisponding tile
     public void Generate(int levelIndex)
@@ -65,6 +66,7 @@ public class FloorGenerator : MonoBehaviour
         {
             if(colorMap.pixelColor.Equals(color))
             {
+                // Debug.Log(colorMap.prefab.name);
                 Instantiate(colorMap.prefab, positionWithOffset, Quaternion.identity, OutputTransform);
             }
         }

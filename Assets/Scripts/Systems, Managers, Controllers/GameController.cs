@@ -16,6 +16,8 @@ public class GameController : MonoBehaviour
     }
     #endregion
 
+    public Animator animator;
+    public GameObject UI;
 
     #region Calls CreatedNewFloor through events
     void OnEnable()
@@ -32,6 +34,17 @@ public class GameController : MonoBehaviour
     //Creates a new random floor from the array
     public void CreatedNewFloor()
     {
-        FloorGenerator.instance.Generate(1);//Random.Range(0, FloorGenerator.instance.toBeConvertedLevel.Length));
+        FloorGenerator.instance.Generate(Random.Range(0, FloorGenerator.instance.toBeConvertedLevel.Length));
+    }
+
+    public void Shake()
+    {
+        animator.SetTrigger("Shake");
+    }
+
+    public void EndGame()
+    {
+        UI.SetActive(true);
+        Time.timeScale = 0;
     }
 }
