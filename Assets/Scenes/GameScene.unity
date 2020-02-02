@@ -152,7 +152,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.3}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -270,7 +270,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 58496463
-  m_SortingLayer: 0
+  m_SortingLayer: 2
   m_SortingOrder: 1000
   m_Sprite: {fileID: 21300000, guid: 7d7eda9dcbd1f45b48a3b4489fa1df8b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -332,10 +332,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player1: {fileID: 244015403}
+  animator: {fileID: 842229712}
   speed: 12
   dashSpeed: 2
   repairDelay: 0.5
-  useKeyBoard: 1
+  useKeyBoard: 0
   hasKey: 0
 --- !u!4 &1967744657
 Transform:
