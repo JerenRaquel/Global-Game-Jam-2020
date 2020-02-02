@@ -10,6 +10,7 @@ public class ItemController : MonoBehaviour
 
     public Sprite speedItem;
     public Sprite repairItem;
+    public Sprite doorItem;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,9 @@ public class ItemController : MonoBehaviour
         }
         else if(itemType == 2){
             spriteRenderer.sprite = repairItem;
+        }
+        else if(itemType == 3){
+            spriteRenderer.sprite = doorItem;
         }
     }
 
@@ -35,6 +39,9 @@ public class ItemController : MonoBehaviour
         }
         else if(itemType == 2){
             repair.rate *= 1.15f;
+        }
+        else if(itemType == 3){
+            player.hasKey = true;
         }
         Destroy(gameObject);
     }
