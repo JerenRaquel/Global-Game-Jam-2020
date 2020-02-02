@@ -37,7 +37,8 @@ public class ItemController : MonoBehaviour
         }
         else if(itemType == 2){
             repair.rate *= 1.15f;
-            repair.StartPowerUpTime();
+            if(repair != null)
+                repair.StartPowerUpTime();
         }
         else if(itemType == 3){
             player.hasKey = true;
