@@ -332,6 +332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player1: {fileID: 244015403}
+  animator: {fileID: 842229712}
   speed: 12
   dashSpeed: 2
   repairDelay: 0.5

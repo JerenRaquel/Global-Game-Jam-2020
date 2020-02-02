@@ -89,7 +89,7 @@ public class PillarController : MonoBehaviour
     }
 
     IEnumerator startDeath(){
-        yield return new WaitForSeconds(180);
-        decayRate *= 2;
+        yield return new WaitForSeconds(120);
+        decayRate *= 3;
     }
 }

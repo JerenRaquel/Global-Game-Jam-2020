@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     
     [Header("Players")]
     public GameObject player1;
-    //public Animator animator;
+    public Animator animator;
 
     [Header("Settings")]
     public float speed;
@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
     void Move1(Vector2 dir)
     {
         player1.GetComponent<Rigidbody2D>().position += dir * speed * Time.deltaTime * dashSpeedCTX;
-        //animator.SetBool("IsMoving", Mathf.Abs(dir.x) > 0 || Mathf.Abs(dir.y) > 0);
+        animator.SetBool("IsMoving", Mathf.Abs(dir.x) > 0 || Mathf.Abs(dir.y) > 0);
     }
     void FixedUpdate()
     {
