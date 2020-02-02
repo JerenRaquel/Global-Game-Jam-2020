@@ -16,6 +16,7 @@ public class DoorController : MonoBehaviour
     {
         pC = PlayerController.instance;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        pC = PlayerController.instance;
     }
 
     // Update is called once per frame
@@ -41,9 +42,10 @@ public class DoorController : MonoBehaviour
     {
         if(other.CompareTag("Player")){
             checkE = true;
-            if(pC != null && pC.hasKey){
-                progress = 100;
+            if(pC != null && pC.hasKey && progress < maxProgress){
+                progress = maxProgress;
                 pC.hasKey = false;
+                Debug.Log("Key used");
             }
         }
     }
