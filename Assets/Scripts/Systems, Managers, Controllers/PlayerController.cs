@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
     {
         if(useKeyBoard)
         {
-       // animator.SetBool("IsMoving", Mathf.Abs(movement.x) > 0 || Mathf.Abs(movement.y) > 0);
+        animator.SetBool("IsMoving", Mathf.Abs(movement.x) > 0 || Mathf.Abs(movement.y) > 0);
             movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         
             player1.transform.Translate(movement * speed * Time.deltaTime);
