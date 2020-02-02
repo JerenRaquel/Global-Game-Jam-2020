@@ -8,12 +8,13 @@ public class DoorController : MonoBehaviour
     private bool checkE;
     public float progress;
     public float maxProgress = 100;
-    public PlayerController pC = PlayerController.instance;
+    public PlayerController pC;
 
     private SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
+        pC = PlayerController.instance;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
