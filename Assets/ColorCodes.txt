@@ -1,0 +1,19 @@
+Corners:
+	topleft: 00001e
+	topright: 000028
+	bottomleft: 000032
+	bottomright: 00003c
+Floor: c4ff0e
+Walls:
+	Vertical: 000046
+	Horizontal: 000000
+Door: 
+	horizontal: ff7f27
+	Vertical: ff7f31
+TJunctions:
+	Right: 00a8f3
+	Left: 00a8e9
+	Up: 00a8df
+	Down: 00a8d5
+Elevator: b83dba	
+Pillars: 3f48cc
