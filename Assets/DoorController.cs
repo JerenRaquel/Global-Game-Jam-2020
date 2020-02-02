@@ -8,10 +8,13 @@ public class DoorController : MonoBehaviour
     private bool checkE;
     public float progress;
     public float maxProgress = 100;
+    public PlayerController pC = PlayerController.instance;
+
+    private SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
-
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -20,20 +23,24 @@ public class DoorController : MonoBehaviour
         if(progress <= maxProgress){
             // fillController.SetFill(progress);
             if(checkE){
-                progress += 0.5f;// * Time.deltaTime;
+                spriteRenderer.color = Color.gray;
+                progress += 1f;// * Time.deltaTime;
+            }
+            else{
+                spriteRenderer.color = Color.white;
             }
         }
         else if(progress > maxProgress){
+            spriteRenderer.color = Color.gray;
             boxCollider2D.enabled = false;
         }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        PlayerController pC = other.GetComponent<PlayerController>();
         if(other.CompareTag("Player")){
             checkE = true;
-            if(pC.hasKey){
+            if(pC != null && pC.hasKey){
                 progress = 100;
                 pC.hasKey = false;
             }
