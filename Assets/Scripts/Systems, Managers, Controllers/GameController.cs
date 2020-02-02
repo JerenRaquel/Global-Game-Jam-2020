@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour
     public GameObject UI;
 
     private int prevFloor;
+    bool isDead = false;
 
     #region Calls CreatedNewFloor through events
     void OnEnable()
@@ -50,9 +51,21 @@ public class GameController : MonoBehaviour
         animator.SetTrigger("Shake");
     }
 
+    void Update()
+    {
+        if(isDead && Input.GetKeyDown(KeyCode.F))
+        {
+            UI.SetActive(false);
+            Time.timeScale = 1;
+            isDead = false;
+            SceneController.instance.LoadScene(1);
+        }
+    }
+
     public void EndGame()
     {
         UI.SetActive(true);
         Time.timeScale = 0;
+        isDead = true;
     }
 }

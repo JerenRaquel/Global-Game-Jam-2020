@@ -16,6 +16,7 @@ public class SceneController : MonoBehaviour
     }
     #endregion
 
+    int currentScene = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,14 +27,17 @@ public class SceneController : MonoBehaviour
     //pass the index of the scene to load that scene
     public void LoadScene(int sceneIndex)
     {
-        if(SceneManager.sceneCount > 1)
-        {
-            for (int i = 1; i < SceneManager.sceneCount; i++)
-            {
-                SceneManager.UnloadSceneAsync(i);
-            }
-        }
-        
+        // if(SceneManager.sceneCount > 1)
+        // {
+        //     for (int i = 1; i < SceneManager.sceneCount; i++)
+        //     {
+        //         SceneManager.UnloadSceneAsync(i);
+        //     }
+        // }
+        if(currentScene != 0)
+            SceneManager.UnloadSceneAsync(currentScene);
+        currentScene = sceneIndex;
+
         SceneManager.LoadSceneAsync(sceneIndex, LoadSceneMode.Additive);
     }
 }
