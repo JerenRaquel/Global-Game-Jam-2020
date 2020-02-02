@@ -31,14 +31,17 @@ public class ItemController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other){
         PlayerController player = PlayerController.instance;
+        repair = RepairController.instance;
+        Debug.Log(repair);
         if(itemType == 1){
             player.speed *= 1.5f;
             PlayerController.instance.StartPowerUpTime();
         }
         else if(itemType == 2){
-            repair.rate *= 1.15f;
-            if(repair != null)
+            if(repair != null){
                 repair.StartPowerUpTime();
+            }
+                
         }
         else if(itemType == 3){
             player.hasKey = true;

@@ -8,28 +8,23 @@ public class RepairController : MonoBehaviour
     public FillController fillController;
     public float rate;
     private float ogRate;
-    private bool powerUp = false;
 
     public bool repairActive = false;
+    public static RepairController instance = null;
 
     void Start(){
+        instance = this;
         rate = 2;
         ogRate = rate;
     }
 
     void FixedUpdate(){
-        if(rate != ogRate && !powerUp){
-                StartCoroutine(PowerUpTime());
-                powerUp =  true;
-        }
-        else if(rate == ogRate){
-            powerUp = false;
-        }
+
     }
 
-    //this is needed for some weird reason?
     public void StartPowerUpTime()
     {
+        rate *= 1.15f;
         StartCoroutine(PowerUpTime());
     }
 
