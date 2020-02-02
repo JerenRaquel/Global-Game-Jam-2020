@@ -10,6 +10,7 @@ public class PillarController : MonoBehaviour
     bool checkE;
     float maxHealth;
     bool shooked = false;
+    private float decayRate = 14;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,7 @@ public class PillarController : MonoBehaviour
         health = 250;
         maxHealth = health;
         sR = GetComponent<SpriteRenderer>();
+        StartCoroutine(startDeath());
     }
 
     void Shake()
@@ -65,7 +67,7 @@ public class PillarController : MonoBehaviour
                 health += 150 * Time.deltaTime;
             }
             else
-                health -= 14f * Time.deltaTime;
+                health -= decayRate * Time.deltaTime;
         }
         else if(health <= 0){
             sR.color = Color.black;
@@ -84,5 +86,10 @@ public class PillarController : MonoBehaviour
     void OnTriggerExit2D(Collider2D other){
         if(other.CompareTag("Player"))
             checkE = false;
+    }
+
+    IEnumerator startDeath(){
+        yield return new WaitForSeconds(120);
+        decayRate *= 3;
     }
 }
