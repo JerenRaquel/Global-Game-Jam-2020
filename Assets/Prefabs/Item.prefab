@@ -131,6 +131,7 @@ MonoBehaviour:
   repair: {fileID: 0}
   speedItem: {fileID: 21300000, guid: ed265ca83a48d4568a531c339bd13194, type: 3}
   repairItem: {fileID: 21300000, guid: 4d751001ebe03479cab1733b926ef796, type: 3}
+  doorItem: {fileID: 21300000, guid: 151cd0650fc154e81a445ac9d5135ffc, type: 3}
 --- !u!61 &5528076371571814386
 BoxCollider2D:
   m_ObjectHideFlags: 0
